@@ -86,7 +86,7 @@ class Base:
         # Create Embed Response.
         emb = discord.Embed(colour=self.color)
         emb.add_field(name="Command", value=command.title(), inline=False)
-        emb.add_field(name="Source", value='<https://github.com/PrestigeDox/Watashi-SelfBot/tree/master/cogs/'
+        emb.add_field(name="Source", value='<https://github.com/naught0/Watashi-SelfBot/tree/master/cogs/'
                                            f'{file}#L{starting_line}-L{end_line}>', inline=False)
 
         return await ctx.message.edit(embed=emb)
