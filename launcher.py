@@ -1,3 +1,5 @@
+#!/bin/env python3.6
+
 import sys
 from watashi import Watashi
 

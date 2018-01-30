@@ -62,10 +62,10 @@ class Eval:
 
             if ret is None:
                 if value:
-                    await ctx.message.edit(f'```py\n{value}\n```')
+                    await ctx.message.edit(content=f'`{ctx.message.content}\`n```py\n{value}\n```')
             else:
                 self._last_result = ret
-                await ctx.message.edit(f'```py\n{value}{ret}\n```')
+                await ctx.message.edit(content=f'`{ctx.message.content}`\n```py\n{value}{ret}\n```')
 
     @commands.command(name='eval')
     async def shell_access(self, ctx, *, cmd):
@@ -76,11 +76,11 @@ class Eval:
 
         try:
             if stdout:
-                await ctx.send(f'`{cmd}`\n```{stdout.decode().strip()}```')
+                await ctx.message.edit(content=f'{ctx.message.content}\n`{cmd}`\n```{stdout.decode().strip()}```')
             elif stderr:
-                await ctx.send(f'`{cmd}`\n```{stderr.decode().strip()}```')
+                await ctx.message.edit(content=f'{ctx.message.content}\n`{cmd}`\n```{stderr.decode().strip()}```')
             else:
-                await ctx.send(f'`{cmd}` produced no output')
+                await ctx.message.edit(content=f'{ctx.message.content}\n`{cmd}` produced no output')
 
         except Exception as e:
             await ctx.error(f'Unable to send output\n```py\n{e}```', delete_after=15.0)

@@ -1,7 +1,0 @@
-wikipedia
-discord.py
-urbandictionary
-pyfiglet
-bs4
-lxml
-youtube_dl
