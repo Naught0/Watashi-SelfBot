@@ -7,7 +7,7 @@ class Clean:
         self.bot = bot
 
     @commands.command(aliases=['clear', 'purge'])
-    async def clean(self, ctx, limit: int=None, delay: float=1.0):
+    async def clean(self, ctx, limit: int=None, delay: float=0.5):
         """ Cleanse the channel of your messages """
         await ctx.message.delete()
 
