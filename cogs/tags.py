@@ -51,7 +51,7 @@ class Tag:
         """ Retrieve a previously stored tag """
         tag_name = tag_name.lower()
         if tag_name not in self.tag_dict:
-            await ctx.error(f'Tag `{tag_name}` does not exist.')
+            return await ctx.error(f'Tag `{tag_name}` does not exist.')
 
         # Increment uses
         self.tag_dict[tag_name]['uses'] += 1
